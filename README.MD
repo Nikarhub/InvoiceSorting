@@ -34,7 +34,7 @@ python rename_invoice.py
 
 ## 打包成exe
 ```bash
-python -m PyInstaller -F -n "发票助手" rename_invoice-5.py
+python -m PyInstaller -F -n "发票助手" rename_invoice.py
 ```
 ## 注意事项
 1. 建议先备份原始文件

@@ -15,7 +15,7 @@ def extract_invoice_info(file_path):
             # print("-"*40)
             
             # 1. 日期处理 (纯数字)
-            date_match = re.search(r'(\d{4})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日', text)
+            date_match = re.search(r'开票日期[:：]\s*(\d{4})\s*年\s*(\d{1,2})\s*月\s*(\d{1,2})\s*日', text)
             if date_match:
                 year = date_match.group(1)
                 month = date_match.group(2).zfill(2)
@@ -44,7 +44,7 @@ def extract_invoice_info(file_path):
                 if len(val) > 5:
                     order_num = val
 
-            print(f"[{filename}] -> 订单:{order_num} | 发票:{invoice_num} | 日期:{date_str}")
+            print(f"[{filename}] -> 订单号:{order_num} | 发票号码:{invoice_num} | 开票日期:{date_str}")
             return order_num, invoice_num, date_str
 
     except Exception as e:
